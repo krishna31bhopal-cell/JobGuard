@@ -306,9 +306,10 @@ def analyze():
 # RUN APPLICATION
 # ==========================================
 
-if __name__ == "__main__":
-    init_db()
+# Initialize database when the app starts
+init_db()
 
+if __name__ == "__main__":
     app.run(
         host="0.0.0.0",
         port=int(__import__("os").environ.get("PORT", 5000)),
