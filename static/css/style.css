@@ -1,0 +1,451 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b1020;
+    color: #f5f7ff;
+    min-height: 100vh;
+}
+
+
+/* Navbar */
+
+.navbar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    border-bottom: 1px solid #202842;
+    background: #0d1326;
+}
+
+
+.logo {
+    font-size: 23px;
+    font-weight: 700;
+}
+
+
+.nav-text {
+    color: #9ba7c7;
+    font-size: 14px;
+}
+
+
+/* Main */
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+/* Hero */
+
+.hero {
+    text-align: center;
+    padding: 75px 10px 45px;
+}
+
+
+.badge {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid #334064;
+    border-radius: 30px;
+    color: #8fa5ff;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+
+.hero h1 span {
+    color: #6f8cff;
+}
+
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    color: #9ba7c7;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+
+/* Analyzer */
+
+.analyzer-card {
+    background: #11182d;
+    border: 1px solid #222d49;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+
+.card-header h2 {
+    font-size: 20px;
+}
+
+
+#charCount {
+    color: #7783a5;
+    font-size: 13px;
+}
+
+
+textarea {
+    width: 100%;
+    min-height: 240px;
+    resize: vertical;
+    background: #0b1020;
+    border: 1px solid #293552;
+    border-radius: 12px;
+    padding: 18px;
+    color: white;
+    font-size: 15px;
+    line-height: 1.6;
+    outline: none;
+}
+
+
+textarea:focus {
+    border-color: #6f8cff;
+}
+
+
+.action-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 13px 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+#analyzeBtn {
+    background: #6f8cff;
+    color: white;
+}
+
+
+#analyzeBtn:hover {
+    opacity: 0.9;
+}
+
+
+.clear-btn {
+    background: #202a44;
+    color: #cbd3eb;
+}
+
+
+/* Loading */
+
+.loading {
+    text-align: center;
+    padding: 35px;
+    color: #9ba7c7;
+}
+
+
+.spinner {
+    width: 35px;
+    height: 35px;
+    border: 4px solid #293552;
+    border-top-color: #6f8cff;
+    border-radius: 50%;
+    margin: auto auto 12px;
+    animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* Results */
+
+.results {
+    margin-top: 30px;
+    background: #11182d;
+    border: 1px solid #222d49;
+    border-radius: 18px;
+    padding: 25px;
+}
+
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+
+.results-header h2 {
+    font-size: 22px;
+}
+
+
+#resultBadge {
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* Score cards */
+
+.score-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+
+.score-card {
+    background: #0b1020;
+    border: 1px solid #202b46;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+
+.score-card p {
+    color: #8793b5;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+
+.score {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+.prediction {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+
+.progress {
+    height: 8px;
+    background: #202a44;
+    border-radius: 10px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background: #6f8cff;
+    transition: width 0.8s;
+}
+
+
+/* Indicators */
+
+.indicator-section {
+    margin-top: 30px;
+}
+
+
+.indicator-section h3 {
+    margin-bottom: 15px;
+}
+
+
+.indicator-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.indicator {
+    background: #291b25;
+    border: 1px solid #56313f;
+    color: #ff9cae;
+    padding: 9px 13px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+
+.no-indicators {
+    color: #72d9a3;
+    background: #14261f;
+    border: 1px solid #275a46;
+    padding: 10px 14px;
+    border-radius: 8px;
+}
+
+
+/* Safety */
+
+.safety-message {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #151e35;
+    color: #aeb9d5;
+    line-height: 1.5;
+}
+
+
+/* How section */
+
+.how-section {
+    padding: 70px 0;
+    text-align: center;
+}
+
+
+.how-section h2 {
+    margin-bottom: 30px;
+}
+
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+
+.step {
+    background: #11182d;
+    border: 1px solid #222d49;
+    border-radius: 14px;
+    padding: 25px;
+}
+
+
+.step-number {
+    color: #6f8cff;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+
+.step h3 {
+    margin-bottom: 10px;
+}
+
+
+.step p {
+    color: #8e9ab8;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    border-top: 1px solid #202842;
+    padding: 25px;
+    color: #7e89a8;
+    font-size: 13px;
+}
+
+
+.disclaimer {
+    margin-top: 8px;
+    font-size: 11px;
+}
+
+
+/* Hidden */
+
+.hidden {
+    display: none;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .score-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-text {
+        display: none;
+    }
+
+}
+/* Risk badges */
+
+.risk-high {
+    background: #4a1f2a;
+    color: #ff8fa3;
+    border: 1px solid #743447;
+}
+
+.risk-medium {
+    background: #493b1d;
+    color: #ffd36a;
+    border: 1px solid #705b27;
+}
+
+.risk-low {
+    background: #183a2c;
+    color: #70e0a5;
+    border: 1px solid #2b684c;
+}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JobGuard | Job Scam Detector</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            🛡️ JobGuard
+        </div>
+
+        <div class="nav-text">
+            AI-Powered Job Scam Detection
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- Hero Section -->
+
+        <section class="hero">
+
+            <div class="badge">
+                AI + NLP Based Analysis
+            </div>
+
+            <h1>
+                Is This Job <span>Real or a Scam?</span>
+            </h1>
+
+            <p>
+                Paste a job description below and JobGuard will analyze
+                suspicious patterns, detect scam signals and estimate
+                the risk level.
+            </p>
+
+        </section>
+
+
+        <!-- Analyzer -->
+
+        <section class="analyzer-card">
+
+            <div class="card-header">
+
+                <h2>Analyze Job Posting</h2>
+
+                <span id="charCount">0 characters</span>
+
+            </div>
+
+
+            <textarea
+                id="jobText"
+                placeholder="Paste the complete job description here...
+
+Example:
+Earn ₹80,000 per month working from home.
+No experience required.
+Pay a registration fee of ₹2,000 to secure your position..."
+            ></textarea>
+
+
+            <div class="action-row">
+
+                <button id="analyzeBtn" onclick="analyzeJob()">
+
+                    🔍 Analyze Job
+
+                </button>
+
+                <button class="clear-btn" onclick="clearText()">
+
+                    Clear
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Loading -->
+
+        <div id="loading" class="loading hidden">
+
+            <div class="spinner"></div>
+
+            <p>Analyzing job posting...</p>
+
+        </div>
+
+
+        <!-- Results -->
+
+        <section id="results" class="results hidden">
+
+            <div class="results-header">
+
+                <h2>Analysis Result</h2>
+
+                <span id="resultBadge"></span>
+
+            </div>
+
+
+            <div class="score-grid">
+
+                <div class="score-card">
+
+                    <p>Risk Score</p>
+
+                    <div class="score" id="riskScore">
+                        0
+                    </div>
+
+                    <div class="progress">
+
+                        <div id="progressBar"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="score-card">
+
+                    <p>ML Scam Probability</p>
+
+                    <div class="score" id="mlScore">
+                        0%
+                    </div>
+
+                </div>
+
+
+                <div class="score-card">
+
+                    <p>Prediction</p>
+
+                    <div class="prediction"
+                        id="prediction">
+                        -
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Indicators -->
+
+            <div class="indicator-section">
+
+                <h3>
+                    🚨 Suspicious Indicators
+                </h3>
+
+                <div id="indicators"
+                    class="indicator-list">
+
+                </div>
+
+            </div>
+
+
+            <!-- Safety Message -->
+
+            <div id="safetyMessage"
+                class="safety-message">
+
+            </div>
+
+        </section>
+
+
+        <!-- How it works -->
+
+        <section class="how-section">
+
+            <h2>How JobGuard Works</h2>
+
+            <div class="steps">
+
+                <div class="step">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <h3>Paste</h3>
+
+                    <p>
+                        Paste a job description into the analyzer.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <h3>Analyze</h3>
+
+                    <p>
+                        NLP and machine learning analyze the text.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <h3>Protect</h3>
+
+                    <p>
+                        Get risk signals to help evaluate the posting.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            JobGuard © 2026 | AI-Powered Job Scam Detection
+        </p>
+
+        <p class="disclaimer">
+            This tool provides an automated risk assessment and should
+            not be treated as definitive proof that a job posting is
+            fraudulent.
+        </p>
+
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}">
+    </script>
+
+</body>
+
+</html>
